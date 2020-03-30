@@ -78,6 +78,6 @@ app.delete("/todos/:tid", async (req, res) => {
 });
 
 //server
-app.listen('3000', (req, res) => {
-    console.log('server started at port 3000');
+app.listen('5000', (req, res) => {
+    console.log('server started at port 5000');
 });
