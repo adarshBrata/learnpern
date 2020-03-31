@@ -1,4 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react';
+import EditTodo from "./editTodo";
 const axios = require("axios").default;
 
 const ListTodo = () => {
@@ -28,7 +29,7 @@ const ListTodo = () => {
     useEffect(() => {
         getTodo();
     }, []);
-    console.log(todos);
+
     return (
         <Fragment>
             <table className="table table-striped mt-5 text-center">
@@ -50,7 +51,7 @@ const ListTodo = () => {
                 {todos.map(todo => (
                     <tr key={todo.tid}>
                         <td>{todo.description}</td>
-                        <td><button className="btn btn-primary">Edit</button></td>
+                        <td><EditTodo todo={todo} /></td>
                         <td><button className="btn btn-danger" onClick={() => deleteTodo(todo.tid)}>DEL</button></td>
                     </tr>
                 ))}
